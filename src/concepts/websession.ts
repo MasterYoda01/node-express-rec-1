@@ -32,10 +32,7 @@ export default class WebSessionConcept {
     if (session.user!==undefined){
       throw new Error("Already Logged In");
     }
-    
-    else{
-    session.user = username;
-    }
+    session.user = username
   }
 
   getUser(session: WebSessionDoc) {
@@ -55,4 +52,9 @@ export default class WebSessionConcept {
       throw new UnauthenticatedError("Not logged in!");
     }
   }
+  // isLoggedOut(session:WebSessionDoc){
+  //   if (session.user !== undefined){
+  //     throw new UnauthenticatedError("Still logged in!")
+  //   }
+  // }
 }
